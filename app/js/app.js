@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('angularshowoff', ['angularshowoff.controllers',
-                                  'angularshowoff.filters',
-                                  'angularshowoff.services',
-                                  'angularshowoff.directives',
+angular.module('angular-showoff', ['angular-showoff.controllers',
+                                  'angular-showoff.filters',
+                                  'angular-showoff.services',
+                                  'angular-showoff.directives',
                                   'deferreddata']).
 
     config(['$routeProvider', function($routeProvider) {

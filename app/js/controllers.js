@@ -2,11 +2,13 @@
 (function () {
 
 
-var module = angular.module('angularshowoff.controllers', []);
+var module = angular.module('angular-showoff.controllers', []);
 
 
-module.controller('MainCtrl', ['$scope', '$rootScope', '$http', '$location', 'Marked',
-                             function ($scope, $rootScope, $http, $location, Marked) {
+module.controller('MainCtrl', ['$scope', '$rootScope', '$http', '$location', 'Presentation',
+                             function ($scope, $rootScope, $http, $location, Presentation) {
+
+    var configPath = 'data/config.json';
 
     $rootScope.slides = [];
     $rootScope.currentIndex = 0; // internal index for first slide is 0 (but #/1 in url, it's more user friendly)
@@ -25,19 +27,12 @@ module.controller('MainCtrl', ['$scope', '$rootScope', '$http', '$location', 'Ma
         }
     };
 
-    $rootScope.$watch('source.text', function () {
-        $rootScope.slides = Marked.parseSource($rootScope.source.text);
+    $rootScope.$watch('source.markdown', function () {
+        $rootScope.slides = Presentation.parseSource($rootScope.source.markdown);
     });
 
-    $rootScope.config = {
-        title: "angular-showoff demo",
-        sections: [
-            {file: "begin/begin.md"},
-            {file: "end/end.md"},
-        ]
-    };
     $rootScope.load = function () {
-        $rootScope.source = Marked.loadSource($rootScope.config);
+        $rootScope.source = Presentation.loadSource(configPath);
     };
     $rootScope.load();
 

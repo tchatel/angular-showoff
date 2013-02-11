@@ -1,7 +1,7 @@
 'use strict';
 (function () {
 
-var module = angular.module('angularshowoff.filters', []);
+var module = angular.module('angular-showoff.filters', []);
 
 /*
  * Filters just the current slide, or all slide in 'showAll' mode

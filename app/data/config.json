@@ -1,0 +1,7 @@
+{
+    "title": "angular-showoff demo",
+    "sections": [
+        {"file": "data/begin/begin.md"},
+        {"file": "data/end/end.md"}
+    ]
+}

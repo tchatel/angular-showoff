@@ -1,7 +1,7 @@
 'use strict';
 (function () {
 
-var module = angular.module('angularshowoff.services', []);
+var module = angular.module('angular-showoff.services', []);
 
 module.value('Util', {
     trim: function (text) {
@@ -12,7 +12,7 @@ module.value('Util', {
 /*
  * Service that loads and parses markdown source files
  */
-module.factory('Marked', ['Util', 'DeferredData', '$http', '$q', function (Util, DeferredData, $http, $q) {
+module.factory('Presentation', ['Util', 'DeferredData', '$http', '$q', function (Util, DeferredData, $http, $q) {
     var markedOptions = {
         gfm: true,
         tables: true,
@@ -69,19 +69,26 @@ module.factory('Marked', ['Util', 'DeferredData', '$http', '$q', function (Util,
             }
             return visibleSlides;
         },
-        loadSource: function (config) {
+        loadSource: function (configPath) {
             var result = DeferredData.typeObject();
-            var source = {text: ''};
-            var promise = $q.when('start');
-            for (var i = 0 ; i < config.sections.length ; i++ ) {
-                var mdFile = 'data/' + config.sections[i].file;
-                promise = next(promise, mdFile, source);
-            }
-            promise.then(function () {
-                result.$resolve(source);
-            }, function () {
+
+            $http.get(configPath).success(function (data) {
+                var config = data;
+                var source = {title: config.title, markdown: ''};
+                var promise = $q.when('start'); // Already resolved promise
+                for (var i = 0 ; i < config.sections.length ; i++ ) {
+                    var mdFile = config.sections[i].file;
+                    promise = next(promise, mdFile, source);
+                }
+                promise.then(function () {
+                    result.$resolve(source);
+                }, function () {
+                    result.$resolve($q.reject("error"));
+                })
+            }).error(function (error) {
                 result.$resolve($q.reject("error"));
-            })
+            });
+
             return result;
 
             function next(promise, mdFile, source) {
@@ -90,7 +97,7 @@ module.factory('Marked', ['Util', 'DeferredData', '$http', '$q', function (Util,
                 promise.then(function () {
                     var httpPromise = $http.get( mdFile);
                     httpPromise.success(function (data) {
-                        source.text += transformSource(data + "\n\n", dir);
+                        source.markdown += transformSource(data + "\n\n", dir);
                         nextDefer.resolve();
                     });
                     httpPromise.error(function (error) {

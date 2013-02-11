@@ -2,7 +2,7 @@
 (function () {
 
 
-var module = angular.module('angularshowoff.directives', []);
+var module = angular.module('angular-showoff.directives', []);
 
 /*
  * Keyboard shortcuts
