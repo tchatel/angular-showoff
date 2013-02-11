@@ -35,7 +35,7 @@ in subdirectories, you have to list all the markdown files in the config file.
 The tool can show text, images, syntax highlighted code, bullet or numbered lists. It does not have transitions, nor incremental
 lists.
 
-
+The file css/custom.css is for user-defined styles, specific to its presentations.
 
 
 
