@@ -31,6 +31,7 @@
           <tr><td class="key">+</td><td>increase font size</td></tr>
           <tr><td class="key">-</td><td>decrease font size</td></tr>
           <tr><td class="key">b</td><td>toggle black background</td></tr>
+          <tr><td class="key">s</td><td>show/hide source</td></tr>
           <tr><td class="key">a</td><td>show all slides</td></tr>
           <tr><td class="key">h, z</td><td>toggle help (this)</td></tr>
         </tbody>
@@ -38,6 +39,7 @@
   </div>
 
   <div id="source" ng-cloak ng-show="showSource">
+      <p>Source (markdown) with added path to images. Modifications will not be saved!</p>
       <textarea ng-model="source.markdown"></textarea>
   </div>
 

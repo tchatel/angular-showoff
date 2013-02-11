@@ -59,15 +59,23 @@ body.blackBackground.all {
 #source {
     display: block;
     position: fixed;
+    width: 357px;
     top: 0;
     left: 0;
     padding: 8px;
+    margin: 5px;
+    background-color: rgba(220, 220, 220, 0.8);
+    border-radius: 7px;
+    border: solid 1px #ccc;
+}
+#source p {
+    margin: 0;
+    padding: 5px;
 }
 #source textarea {
     width: 350px;
     height: 650px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 #slides {
@@ -233,7 +241,6 @@ body.blackBackground.all {
     color: #fff;
     background-color: rgba(0, 40, 50, 0.8);
     padding: 6px 10px 3px 10px;
-    line-height: 30px;
     border-radius: 10px;
 }
 .slide .content pre {
