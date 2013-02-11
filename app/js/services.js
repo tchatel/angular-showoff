@@ -3,10 +3,16 @@
 
 var module = angular.module('angularshowoff.services', []);
 
+module.value('Util', {
+    trim: function (text) {
+        return text != undefined ? text.replace(/^\s+/g,'').replace(/\s+$/g,'') : text;
+    }
+});
+
 /*
  * Service that loads and parses markdown source files
  */
-module.factory('Marked', ['DeferredData', '$http', '$q', function (DeferredData, $http, $q) {
+module.factory('Marked', ['Util', 'DeferredData', '$http', '$q', function (Util, DeferredData, $http, $q) {
     var markedOptions = {
         gfm: true,
         tables: true,
@@ -22,7 +28,7 @@ module.factory('Marked', ['DeferredData', '$http', '$q', function (DeferredData,
         var slides = [];
         var execResult, lastIndex = 0;
         while ((execResult = newSlideRegex.exec(html)) != null) {
-            var slideInfo = angular.trim(execResult[1]);
+            var slideInfo = Util.trim(execResult[1]);
             setPreviousSlideContent(html.substring(lastIndex, execResult.index));
             slides.push({info: slideInfo, index: slides.length});
             lastIndex = newSlideRegex.lastIndex;
