@@ -14,8 +14,8 @@
 ### Working example :
 
 <div class="left">
-Your name: <input ng-model="name"><br/>
-Hello {{name}}!
+Your name: <input ng-model="name" name="name" autocomplete="off"><br/>
+<span class="result">Hello {{name}}!</span>
 </div>
 
 ---
