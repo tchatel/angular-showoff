@@ -11,12 +11,12 @@ to disable this restriction. Firefox has no such restriction.*
 This application uses the markdown parser named [marked](https://github.com/chjj/marked), from Christopher Jeffrey. It also
 uses [google-code-prettify](https://code.google.com/p/google-code-prettify/) for syntax highlighting of source code.
 
-[Demo is here.](http://tchatel.github.com/angular-showoff/)
+[Demo is here.](http://tchatel.github.com/angular-showoff/) *Use 'h' key for help*.
 
 ## Usage
 
-**angular-showoff** needs a config file *data/config.json*, which defines the presentation title, and the list of slides files.
-Here is the sample *data/config.json* file :
+**angular-showoff** needs a `data/config.json` config file, which defines the presentation title, and the list of slides files.
+Here is the sample `data/config.json` file :
 
     {
         "title": "angular-showoff demo",
@@ -27,7 +27,7 @@ Here is the sample *data/config.json* file :
     }
 
 This example loads two markdown files, containing the slides. Images referenced in the markdown files will be loaded from the
-same directory as the markdown file. For instance, path *data/begin* will be used for images in *data/begin/begin.md*.
+same directory as the markdown file. For instance, path `data/begin` will be used for images in `data/begin/begin.md`.
 
 As with ShowOff, you may assemble a presentation from several parts. But there is no automatic discovery of markdown files
 in subdirectories, you have to list all the markdown files in the config file.
