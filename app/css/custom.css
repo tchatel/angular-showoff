@@ -1,10 +1,11 @@
+/* user-defined styles */
+
 .red { color: red; }
 .blue { color: blue; }
 .green { color: green; }
-.question { color: #292181; }
-div.reversed {
-    background-color: black;
-    color: white;
+
+div.slide-content table td {
+    padding: 0.1em 1em 0.1em 1em;
 }
 
 div.slide.back {

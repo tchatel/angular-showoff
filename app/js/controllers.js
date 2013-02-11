@@ -32,10 +32,8 @@ module.controller('MainCtrl', ['$scope', '$rootScope', '$http', '$location', 'Ma
     $rootScope.config = {
         title: "angular-showoff demo",
         sections: [
-            {file: "essais/slides.md"},
-            {file: "essais/essais.md"},
-            {file: "svn/svn.md"},
-            {file: "dvcs/dvcs.md"}
+            {file: "begin/begin.md"},
+            {file: "end/end.md"},
         ]
     };
     $rootScope.load = function () {

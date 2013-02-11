@@ -13,7 +13,7 @@ module.factory('Marked', ['Util', 'DeferredData', '$http', '$q', function (Util,
     var markedOptions = {
         gfm: true,
         tables: true,
-        breaks: true,
+        breaks: false,
         pedantic: false,
         sanitize: false,
         smartLists: true
@@ -96,7 +96,7 @@ module.factory('Marked', ['Util', 'DeferredData', '$http', '$q', function (Util,
                 promise.then(function () {
                     var httpPromise = $http.get( mdFile);
                     httpPromise.success(function (data) {
-                        source.text += transformSource(data, dir);
+                        source.text += transformSource(data + "\n\n", dir);
                         nextDefer.resolve();
                     });
                     httpPromise.error(function (error) {

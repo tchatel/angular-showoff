@@ -1,4 +1,5 @@
-/* --- fonts are loaded from fonts/fonts.css --- */
+/* global angular-showoff styles */
+/* fonts are loaded from fonts.css */
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
     display: none;
@@ -137,22 +138,40 @@ div.slide h3 {
     font-weight: normal;
     margin: 0.5em 0;
 }
-.small {
+div.slide.small div.slide-content {
     font-size: 80%;
 }
-.smaller {
+div.slide div.slide-content .small {
+    font-size: 80%;
+}
+div.slide.smaller div.slide-content {
     font-size: 70%;
 }
-.smallest {
+div.slide div.slide-content .smaller {
+    font-size: 70%;
+}
+div.slide.smallest div.slide-content {
     font-size: 55%;
 }
-.big {
+div.slide div.slide-content .smallest {
+    font-size: 55%;
+}
+div.slide.big div.slide-content {
     font-size: 120%;
 }
-.bigger {
+div.slide div.slide-content .big {
+    font-size: 120%;
+}
+div.slide.bigger div.slide-content {
     font-size: 150%;
 }
-.biggest {
+div.slide div.slide-content .bigger {
+    font-size: 150%;
+}
+div.slide.biggest div.slide-content {
+    font-size: 200%;
+}
+div.slide div.slide-content .biggest {
     font-size: 200%;
 }
 
@@ -161,7 +180,15 @@ div.slide.left div.slide-content {
     text-align: left;
     padding-left: 20px;
 }
+div.slide-content .left {
+    text-align: left;
+    padding-left: 20px;
+}
 div.slide.right div.slide-content {
+    text-align: right;
+    padding-right: 20px;
+}
+div.slide-content .right {
     text-align: right;
     padding-right: 20px;
 }

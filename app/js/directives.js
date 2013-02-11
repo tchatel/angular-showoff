@@ -84,6 +84,7 @@ module.directive('body', ['$location', '$rootScope', function($location, $rootSc
                         }
                         break;
                     }
+                    case 32: // space
                     case 34: // pg down
                     case 39: // right
                     case 40: { // down
@@ -152,6 +153,7 @@ module.directive('pre', ['$rootScope', '$timeout', function($rootScope, $timeout
     var prettyPrintTriggered = false;
     return {
         restrict: 'E',
+        terminal: true,  // Prevent AngularJS compiling code blocks
         compile: function(element, attrs) {
             console.log("a:", attrs);
             if (!attrs['class']) {
