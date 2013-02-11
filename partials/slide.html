@@ -1,0 +1,6 @@
+<div class="slide" ng-class="slide.info" ng-repeat="slide in slides | current:currentIndex:showAll" ng-click="gotoSlide($index)">
+    <div class="slide-content">
+        <div class="content" include-content="slide.content"></div>
+    </div>
+</div>
+

@@ -1,0 +1,41 @@
+/* user-defined styles */
+
+.red { color: red; }
+.blue { color: blue; }
+.green { color: green; }
+
+div.slide-content table td {
+    padding: 0.1em 1em 0.1em 1em;
+}
+
+div.slide.back {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 1.4em;
+    padding: 0;
+}
+div.slide.back div.slide-content {
+    padding: 0;
+}
+div.slide.back h1 {
+    display: inline-block;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 480px;
+    left: 100px;
+    padding: 0.2em 0.7em 0.2em 0.7em;
+    border-radius: 7px;
+}
+div.slide.back p {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+div.slide.back img {
+    margin: 0;
+    padding: 0;
+    width: 1020px;
+    height: 740px;
+    border-radius: 10px;
+}

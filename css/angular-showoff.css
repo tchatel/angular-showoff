@@ -1,0 +1,243 @@
+/* global angular-showoff styles */
+/* fonts are loaded from fonts.css */
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+body.all #slides {
+    zoom: 0.2;
+}
+body.blackBackground {
+    background-color: black;
+}
+body.all {
+    background-color: #aaa;
+}
+body.blackBackground.all {
+    background-color: #aaa;
+}
+
+#help {
+    background-color: rgba(220, 220, 220, 0.9);
+    position: fixed;
+    right: 70px;
+    top: 40px;
+    z-index: 2;
+    padding: 15px;
+    border-radius: 7px;
+    border: solid 1px #ccc;
+}
+#help td.key {
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+#footer {
+    display: block;
+    background-color: rgba(220, 220, 220, 0.9);
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 3px;
+    border-radius: 7px;
+    border: solid 1px #ccc;
+}
+#footer #slideInfo {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#footer #slidePercent {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#source {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 8px;
+}
+#source textarea {
+    width: 350px;
+    height: 650px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+}
+
+#slides {
+}
+
+.slide {
+    display: table;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -510px;
+    margin-right: 0;
+    margin-top: -370px;
+    margin-bottom: 0;
+    border: none;
+    width: 1020px;
+    height: 740px;
+
+    font-size: 2em;
+    font-family: 'Asap', sans-serif;
+    letter-spacing: -1px;
+    word-spacing: 2px;
+    line-height: 1.1;
+
+    background-color: white;
+    border-radius: 10px;
+    padding: 0;
+}
+.slide-content {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px;
+}
+.slide-content .content {
+    position: relative;
+}
+
+.all .slide {
+    border: solid 1px grey;
+    border-radius: 10px;
+    margin: 1em;
+    position: inherit;
+    float: left;
+}
+
+.slide h1 {
+    font-size: 2.5em;
+    font-weight: normal;
+    margin: 0.5em 0;
+}
+.slide h2 {
+    font-size: 1.6em;
+    font-weight: normal;
+    margin: 0.5em 0;
+}
+.slide h3 {
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 0.5em 0;
+}
+.small .slide-content {
+    font-size: 80%;
+}
+.slide .slide-content .small {
+    font-size: 80%;
+}
+.slide.smaller .slide-content {
+    font-size: 70%;
+}
+.slide .slide-content .smaller {
+    font-size: 70%;
+}
+.slide.smallest .slide-content {
+    font-size: 55%;
+}
+.slide .slide-content .smallest {
+    font-size: 55%;
+}
+.slide.big .slide-content {
+    font-size: 120%;
+}
+.slide .slide-content .big {
+    font-size: 120%;
+}
+.slide.bigger .slide-content {
+    font-size: 150%;
+}
+.slide .slide-content .bigger {
+    font-size: 150%;
+}
+.slide.biggest .slide-content {
+    font-size: 200%;
+}
+.slide .slide-content .biggest {
+    font-size: 200%;
+}
+
+/* classes sur les slides : left, right, code, bullets */
+.slide.left .slide-content {
+    text-align: left;
+    padding-left: 20px;
+}
+.slide-content .left {
+    text-align: left;
+    padding-left: 20px;
+}
+.slide.right .slide-content {
+    text-align: right;
+    padding-right: 20px;
+}
+.slide-content .right {
+    text-align: right;
+    padding-right: 20px;
+}
+.slide.top .slide-content {
+    vertical-align: top;
+    padding-top: 20px;
+}
+.slide.bottom .slide-content {
+    vertical-align: bottom;
+    padding-bottom: 20px;
+}
+.slide.code .slide-content {
+    font-family: 'Source Code Pro', monospace;
+    white-space: pre;
+    text-align: left;
+    padding-left: 20px;
+}
+.slide .slide-content .code {
+    font-family: 'Source Code Pro', monospace;
+    white-space: pre;
+    text-align: left;
+    padding-left: 20px;
+}
+.slide.code p {
+    margin: 0;
+    padding: 0;
+}
+.slide.bullets ul {
+    font-size: 1.5em;
+    text-align: left;
+    padding: 0 0 0 3em;
+    margin: 0;
+}
+.slide.bullets ul li {
+    padding: 25px;
+    margin: 0;
+}
+.slide.bullets ol {
+    font-size: 1.5em;
+    text-align: left;
+    padding: 0 0 0 3em;
+    margin: 0;
+}
+.slide.bullets ol li {
+    padding: 25px;
+    margin: 0;
+}
+.slide.subsection .content {
+    color: #fff;
+    background-color: rgba(0, 40, 50, 0.8);
+    padding: 6px 10px 3px 10px;
+    line-height: 30px;
+    border-radius: 10px;
+}
+.slide .content pre {
+    text-align: left;
+    padding-left: 20px;
+}
+

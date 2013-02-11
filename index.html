@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="angular-showoff">
+<head>
+  <meta charset="utf-8">
+  <title ng-bind="source.title"></title>
+  <link href="css/angular-showoff.css" type="text/css" rel="stylesheet" />
+  <link href="css/code-prettify.css" type="text/css" rel="stylesheet" />
+  <link href="css/custom.css" type="text/css" rel="stylesheet" />
+  <link href="css/fonts.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="lib/gcp/prettify.js"></script>
+</head>
+<body ng-class="(blackBackground && 'blackBackground') + ' ' + (showAll && 'all')" style="zoom: {{(showAll && allZoom) || '1'}};">
+
+  <div id="slides" ng-controller="MainCtrl" style="font-size: {{fontSize}}%;"  style="-webkit-transform: scale(0.5);">
+      <div ng-view></div>
+  </div>
+
+  <div id="footer" ng-cloak ng-show="showFooter">
+      <span id="slideInfo">{{currentIndex + 1}} / {{slides.length}}</span> -
+      <span id="slidePercent">{{(currentIndex + 1) / slides.length * 100 | number:0}} %</span>
+      <span id="debugInfo" style="display: none;">keyUp: 90</span>
+  </div>
+
+  <div id="help" ng-cloak ng-show="showHelp">
+      <table>
+        <tbody>
+          <tr><td class="key">→, ↓, ⇟, space</td><td>next slide</td></tr>
+          <tr><td class="key">←, ↑, ⇞</td><td>previous slide</td></tr>
+          <tr><td class="key">f</td><td>toggle footer</td></tr>
+          <tr><td class="key">r</td><td>reload slides</td></tr>
+          <tr><td class="key">+</td><td>increase font size</td></tr>
+          <tr><td class="key">-</td><td>decrease font size</td></tr>
+          <tr><td class="key">b</td><td>toggle black background</td></tr>
+          <tr><td class="key">a</td><td>show all slides</td></tr>
+          <tr><td class="key">h, z</td><td>toggle help (this)</td></tr>
+        </tbody>
+      </table>
+  </div>
+
+  <div id="source" ng-cloak ng-show="showSource">
+      <textarea ng-model="source.markdown"></textarea>
+  </div>
+
+  <script src="lib/marked/marked.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/deferreddata.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

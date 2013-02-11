@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Asap';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Asap'), local('Asap-Regular'), url(fonts/asap.woff) format('woff');
+}
+@font-face {
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(fonts/sourcecodepro.woff) format('woff');
+}
