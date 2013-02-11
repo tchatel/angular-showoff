@@ -86,6 +86,7 @@ module.factory('Presentation', ['Util', 'DeferredData', '$http', '$q', function 
                     result.$resolve($q.reject("error"));
                 })
             }).error(function (error) {
+                // TODO !!!!!
                 result.$resolve($q.reject("error"));
             });
 
@@ -102,7 +103,7 @@ module.factory('Presentation', ['Util', 'DeferredData', '$http', '$q', function 
                     });
                     httpPromise.error(function (error) {
                         // TODO !!!!!
-                        nextDefer.reject();
+                        nextDefer.reject(error);
                     });
                 });
                 return nextDefer.promise;

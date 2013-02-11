@@ -2,19 +2,19 @@
 
 /* jasmine specs for filters go here */
 
-describe('filter', function() {
-  beforeEach(module('gamestore.filters'));
+describe('filters', function() {
+    beforeEach(module('angular-showoff.filters'));
 
+    describe('current', function() {
 
-  describe('interpolate', function() {
-    beforeEach(module(function($provide) {
-      $provide.value('version', 'TEST_VER');
-    }));
+        it('should return only current slide if not in showAll mode', inject(function(currentFilter) {
+            expect(currentFilter([0, 1, 2, 3], 2, false)).toEqual([2]);
+        }));
 
+        it('should return all slides in showAll mode', inject(function(currentFilter) {
+            expect(currentFilter([0, 1, 2, 3], 2, true)).toEqual([0, 1, 2, 3]);
+        }));
 
-    it('should replace VERSION', inject(function(interpolateFilter) {
-      expect(interpolateFilter('before %VERSION% after')).toEqual('before TEST_VER after');
-    }));
-  });
+    });
 
 });
