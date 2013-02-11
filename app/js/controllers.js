@@ -9,7 +9,7 @@ module.controller('MainCtrl', ['$scope', '$rootScope', '$http', '$location', 'Ma
                              function ($scope, $rootScope, $http, $location, Marked) {
 
     $rootScope.slides = [];
-    $rootScope.currentIndex = 0;
+    $rootScope.currentIndex = 0; // internal index for first slide is 0 (but #/1 in url, it's more user friendly)
     $rootScope.showAll = false;
     $rootScope.allZoom = 1;
     $rootScope.showHelp = false;
@@ -43,7 +43,9 @@ module.controller('MainCtrl', ['$scope', '$rootScope', '$http', '$location', 'Ma
 
 }]);
 
-
+/*
+ * Just sets the current slide index
+ */
 module.controller('SlideCtrl', ['$scope', '$routeParams', '$rootScope',
                                function ($scope, $routeParams, $rootScope) {
     var slideNumber = parseInt($routeParams.slideIndex);

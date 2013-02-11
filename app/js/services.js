@@ -3,13 +3,10 @@
 
 var module = angular.module('angularshowoff.services', []);
 
-module.value('Util', {
-    trim: function (text) {
-        return text != undefined ? text.replace(/^\s+/g,'').replace(/\s+$/g,'') : text;
-    }
-});
-
-module.factory('Marked', ['Util', 'DeferredData', '$http', '$q', function (Util, DeferredData, $http, $q) {
+/*
+ * Service that loads and parses markdown source files
+ */
+module.factory('Marked', ['DeferredData', '$http', '$q', function (DeferredData, $http, $q) {
     var markedOptions = {
         gfm: true,
         tables: true,
@@ -17,15 +14,6 @@ module.factory('Marked', ['Util', 'DeferredData', '$http', '$q', function (Util,
         pedantic: false,
         sanitize: false,
         smartLists: true
-/*
-        langPrefix: 'language-',
-        highlight: function(code, lang) {
-            if (lang === 'js') {
-                return highlighter.javascript(code);
-            }
-            return code;
-        }
-*/
     };
     marked.setOptions(markedOptions);
 
@@ -34,7 +22,7 @@ module.factory('Marked', ['Util', 'DeferredData', '$http', '$q', function (Util,
         var slides = [];
         var execResult, lastIndex = 0;
         while ((execResult = newSlideRegex.exec(html)) != null) {
-            var slideInfo = Util.trim(execResult[1]);
+            var slideInfo = angular.trim(execResult[1]);
             setPreviousSlideContent(html.substring(lastIndex, execResult.index));
             slides.push({info: slideInfo, index: slides.length});
             lastIndex = newSlideRegex.lastIndex;

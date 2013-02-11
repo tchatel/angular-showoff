@@ -4,8 +4,10 @@
 
 var module = angular.module('angularshowoff.directives', []);
 
+/*
+ * Keyboard shortcuts
+ */
 module.directive('body', ['$location', '$rootScope', function($location, $rootScope) {
-    // return the directive link function. (compile function not needed)
     return {
         restrict: 'E',
         link: function postLink(scope, element, attrs) {
@@ -13,7 +15,6 @@ module.directive('body', ['$location', '$rootScope', function($location, $rootSc
                 var target = e.target || e.srcElement;
                 if (target.tagName.toLowerCase() == 'input') return; // ignore inside <input>
                 if (target.tagName.toLowerCase() == 'textarea') return; // ignore inside <textarea>
-                console.log('keycode', e.keyCode);
                 switch (e.keyCode) {
                     case 72:   // 'h' : show/hide help
                     case 90: { // 'z' : show/hide help
@@ -74,8 +75,8 @@ module.directive('body', ['$location', '$rootScope', function($location, $rootSc
                         });
                         break;
                     }
-                    case 33: // pg up
-                    case 37: // left
+                    case 37:   // left
+                    case 33:   // page up
                     case 38: { // up
                         if ($rootScope.currentIndex > 0) {
                             $rootScope.$apply(function () {
@@ -84,9 +85,9 @@ module.directive('body', ['$location', '$rootScope', function($location, $rootSc
                         }
                         break;
                     }
-                    case 32: // space
-                    case 34: // pg down
-                    case 39: // right
+                    case 32:   // space
+                    case 39:   // right
+                    case 34:   // page down
                     case 40: { // down
                         if ($rootScope.currentIndex < $rootScope.slides.length - 1) {
                             $rootScope.$apply(function () {
@@ -101,6 +102,9 @@ module.directive('body', ['$location', '$rootScope', function($location, $rootSc
     };
 }]);
 
+/*
+ * Modified version of ngInclude, which takes the content to include (the real content, not its url) from a scope property.
+ */
 module.directive('includeContent', ['$templateCache', '$anchorScroll', '$compile', function($templateCache, $anchorScroll, $compile) {
     return {
         restrict: 'ECA',
@@ -148,26 +152,25 @@ module.directive('includeContent', ['$templateCache', '$anchorScroll', '$compile
     };
 }]);
 
-
+/*
+ * <pre> elements : adds a 'prettyprint' attribute for syntax highlighting with google-code-prettify, and triggers its
+ * lauching if it isn't already triggered.
+ */
 module.directive('pre', ['$rootScope', '$timeout', function($rootScope, $timeout) {
     var prettyPrintTriggered = false;
     return {
         restrict: 'E',
         terminal: true,  // Prevent AngularJS compiling code blocks
         compile: function(element, attrs) {
-            console.log("a:", attrs);
             if (!attrs['class']) {
                 attrs.$set('class', 'prettyprint');
             } else if (attrs['class'] && attrs['class'].split(' ').indexOf('prettyprint') == -1) {
                 attrs.$set('class', attrs['class'] + ' prettyprint');
             }
-            console.log("c:", attrs);
-
             return function(scope, element, attrs) {
                 if (!prettyPrintTriggered) {
                     prettyPrintTriggered = true;
                     $timeout(function () {
-                        console.log("*** prettyprint ***");
                         prettyPrintTriggered = false;
                         prettyPrint();
                     });

@@ -70,10 +70,10 @@ body.blackBackground.all {
     border-radius: 5px;
 }
 
-div#slides {
+#slides {
 }
 
-div.slide {
+.slide {
     display: table;
     position: absolute;
     top: 50%;
@@ -85,14 +85,7 @@ div.slide {
     border: none;
     width: 1020px;
     height: 740px;
-/*
-    font-family: 'Stoke', serif;    ***
-    font-family: 'EB Garamond', serif;   **
-    font-family: 'Droid Sans', sans-serif; **
-    font-family: 'Lato', sans-serif; **
-    font-family: 'Istok Web', sans-serif; ***
-    font-family: 'Asap', sans-serif; ***
-*/
+
     font-size: 2em;
     font-family: 'Asap', sans-serif;
     letter-spacing: -1px;
@@ -103,7 +96,7 @@ div.slide {
     border-radius: 10px;
     padding: 0;
 }
-div.slide-content {
+.slide-content {
     display: table-cell;
     width: 100%;
     height: 100%;
@@ -111,11 +104,11 @@ div.slide-content {
     vertical-align: middle;
     padding: 20px;
 }
-div.slide-content div.content {
+.slide-content .content {
     position: relative;
 }
 
-.all div.slide {
+.all .slide {
     border: solid 1px grey;
     border-radius: 10px;
     margin: 1em;
@@ -123,127 +116,127 @@ div.slide-content div.content {
     float: left;
 }
 
-div.slide h1 {
+.slide h1 {
     font-size: 2.5em;
     font-weight: normal;
     margin: 0.5em 0;
 }
-div.slide h2 {
+.slide h2 {
     font-size: 1.6em;
     font-weight: normal;
     margin: 0.5em 0;
 }
-div.slide h3 {
+.slide h3 {
     font-size: 1.2em;
     font-weight: normal;
     margin: 0.5em 0;
 }
-div.slide.small div.slide-content {
+.small .slide-content {
     font-size: 80%;
 }
-div.slide div.slide-content .small {
+.slide .slide-content .small {
     font-size: 80%;
 }
-div.slide.smaller div.slide-content {
+.slide.smaller .slide-content {
     font-size: 70%;
 }
-div.slide div.slide-content .smaller {
+.slide .slide-content .smaller {
     font-size: 70%;
 }
-div.slide.smallest div.slide-content {
+.slide.smallest .slide-content {
     font-size: 55%;
 }
-div.slide div.slide-content .smallest {
+.slide .slide-content .smallest {
     font-size: 55%;
 }
-div.slide.big div.slide-content {
+.slide.big .slide-content {
     font-size: 120%;
 }
-div.slide div.slide-content .big {
+.slide .slide-content .big {
     font-size: 120%;
 }
-div.slide.bigger div.slide-content {
+.slide.bigger .slide-content {
     font-size: 150%;
 }
-div.slide div.slide-content .bigger {
+.slide .slide-content .bigger {
     font-size: 150%;
 }
-div.slide.biggest div.slide-content {
+.slide.biggest .slide-content {
     font-size: 200%;
 }
-div.slide div.slide-content .biggest {
+.slide .slide-content .biggest {
     font-size: 200%;
 }
 
 /* classes sur les slides : left, right, code, bullets */
-div.slide.left div.slide-content {
+.slide.left .slide-content {
     text-align: left;
     padding-left: 20px;
 }
-div.slide-content .left {
+.slide-content .left {
     text-align: left;
     padding-left: 20px;
 }
-div.slide.right div.slide-content {
+.slide.right .slide-content {
     text-align: right;
     padding-right: 20px;
 }
-div.slide-content .right {
+.slide-content .right {
     text-align: right;
     padding-right: 20px;
 }
-div.slide.top div.slide-content {
+.slide.top .slide-content {
     vertical-align: top;
     padding-top: 20px;
 }
-div.slide.bottom div.slide-content {
+.slide.bottom .slide-content {
     vertical-align: bottom;
     padding-bottom: 20px;
 }
-div.slide.code div.slide-content {
+.slide.code .slide-content {
     font-family: 'Source Code Pro', monospace;
     white-space: pre;
     text-align: left;
     padding-left: 20px;
 }
-div.slide div.slide-content .code {
+.slide .slide-content .code {
     font-family: 'Source Code Pro', monospace;
     white-space: pre;
     text-align: left;
     padding-left: 20px;
 }
-div.slide.code div.slide-content p {
+.slide.code p {
     margin: 0;
     padding: 0;
 }
-div.slide.bullets div.slide-content ul {
+.slide.bullets ul {
     font-size: 1.5em;
     text-align: left;
     padding: 0 0 0 3em;
     margin: 0;
 }
-div.slide.bullets div.slide-content ul li {
+.slide.bullets ul li {
     padding: 25px;
     margin: 0;
 }
-div.slide.bullets div.slide-content ol {
+.slide.bullets ol {
     font-size: 1.5em;
     text-align: left;
     padding: 0 0 0 3em;
     margin: 0;
 }
-div.slide.bullets div.slide-content ol li {
+.slide.bullets ol li {
     padding: 25px;
     margin: 0;
 }
-div.slide.subsection div.content {
+.slide.subsection .content {
     color: #fff;
     background-color: rgba(0, 40, 50, 0.8);
     padding: 6px 10px 3px 10px;
     line-height: 30px;
     border-radius: 10px;
 }
-div.slide div.content pre {
+.slide .content pre {
     text-align: left;
     padding-left: 20px;
 }
