@@ -1,27 +1,39 @@
-!SLIDE subsection ===========================================================================================
+!SLIDE subsection ================
 
 # angular-showoff slides
 ### this is a *'subsection'* slide
 
-!SLIDE
+
+!SLIDE ===========================
 
 # Keyboard Shortcuts
 ### this is a normal slide
 
 <table class="left">
-    <tr><td>→, ↓, ⇟, space</td> <td class="green">next slide</td></tr>
-    <tr><td>←, ↑, ⇞</td>        <td class="green">previous slide</td></tr>
-    <tr><td>f</td>               <td class="green">toggle footer</td></tr>
-    <tr><td>r</td>               <td class="green">reload slides</td></tr>
-    <tr><td>+</td>               <td class="green">increase font size</td></tr>
-    <tr><td>-</td>               <td class="green">decrease font size</td></tr>
-    <tr><td>b</td>               <td class="green">toggle black background</td></tr>
-    <tr><td>a</td>               <td class="green">show all slides (click on a slide to navigate)</td></tr>
-    <tr><td>h, z</td>            <td class="green">toggle help (this)</td></tr>
+ <tr><td class="red">→, ↓, ⇟, space</td>
+     <td>next slide</td></tr>
+ <tr><td class="red">←, ↑, ⇞</td>
+     <td>previous slide</td></tr>
+ <tr><td class="red">f</td>
+     <td>toggle footer</td></tr>
+ <tr><td class="red">r</td>
+     <td>reload slides</td></tr>
+ <tr><td class="red">+</td>
+     <td>increase font size</td></tr>
+ <tr><td class="red">-</td>
+     <td>decrease font size</td></tr>
+ <tr><td class="red">b</td>
+     <td>toggle black background</td></tr>
+ <tr><td class="red">a</td>
+     <td>show all slides (click on a
+         slide to navigate)</td></tr>
+ <tr><td class="red">h, z</td>
+     <td>toggle help (this)</td>
+ </tr>
 </table>
 
 
-!SLIDE bullets ==================================================================================================
+!SLIDE bullets ===================
 
 # a *'bullets'* slide
 
@@ -30,7 +42,7 @@
 * Three
 
 
-!SLIDE bullets ==================================================================================================
+!SLIDE bullets ===================
 
 # a *'bullets'* slide with an ordered list
 
@@ -39,7 +51,7 @@
 3. Three
 
 
-!SLIDE code ==================================================================================================
+!SLIDE code ======================
 
       <!-- full 'code' slide -->
       <script src="lib/marked/marked.js"></script>
@@ -52,7 +64,7 @@
       <script src="js/app.js"></script>
 
 
-!SLIDE =======================================================================================================
+!SLIDE ===========================
 
 ## Normal slide with some code blocks
 
@@ -71,7 +83,7 @@
     };
 
 
-!SLIDE smaller =======================================================================================================
+!SLIDE smaller ===================
 
 ## Same slide but *'smaller'*
 
@@ -90,7 +102,7 @@
     };
 
 
-!SLIDE bullets =======================================================================================================
+!SLIDE bullets ===================
 
 # Sizes
 
