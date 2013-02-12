@@ -48,8 +48,6 @@ module.factory('Presentation', ['Util', 'DeferredData', '$http', '$q', function 
             // inline: ![Alt text](/path/to/img.jpg)
             var find = new RegExp('! *\\[([^\\]]*)\\] *\\(([^\\)]*)\\)', 'g');
             source = source.replace(find, '![$1](' + imgPath + '/$2)');
-
-            //TODO defined image reference
         }
         return source;
     }
@@ -80,10 +78,11 @@ module.factory('Presentation', ['Util', 'DeferredData', '$http', '$q', function 
                     var mdFile = config.sections[i].file;
                     promise = next(promise, mdFile, source);
                 }
-                promise.then(function () {
+                promise.then(function (data) {
                     result.$resolve(source);
-                }, function () {
-                    result.$resolve($q.reject("error"));
+                }, function (error) {
+                    result.error = error;
+                    result.$resolve($q.reject(error));
                 })
             }).error(function (error) {
                 // TODO !!!!!
@@ -102,7 +101,7 @@ module.factory('Presentation', ['Util', 'DeferredData', '$http', '$q', function 
                         nextDefer.resolve();
                     });
                     httpPromise.error(function (error) {
-                        // TODO !!!!!
+                        result.error = error;
                         nextDefer.reject(error);
                     });
                 });
