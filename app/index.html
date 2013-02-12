@@ -43,6 +43,8 @@
       <textarea ng-model="source.markdown"></textarea>
   </div>
 
+  <div id="error" ng-show="source.error" ng-bind-html-unsafe="source.error"></div>
+
   <script src="lib/marked/marked.js"></script>
   <script src="lib/angular/angular.min.js"></script>
   <script src="js/services.js"></script>

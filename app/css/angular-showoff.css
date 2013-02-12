@@ -38,6 +38,18 @@ body.blackBackground.all {
     padding-right: 10px;
 }
 
+#error {
+    display: block;
+    background-color: rgba(255, 100, 100, 0.8);
+    position: fixed;
+    bottom: 300px;
+    left: 50%;
+    margin-left: -250px;
+    width: 500px;
+    padding: 15px;
+    border-radius: 7px;
+    border: solid 1px #ccc;
+}
 #footer {
     display: block;
     background-color: rgba(220, 220, 220, 0.9);
