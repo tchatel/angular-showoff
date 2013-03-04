@@ -39,3 +39,11 @@ div.slide.back img {
     height: 740px;
     border-radius: 10px;
 }
+
+.slide.subsection .content {
+    color: #fff;
+    background-color: rgba(0, 40, 50, 0.8);
+    margin: 50px;
+    padding: 6px 10px 3px 10px;
+    border-radius: 10px;
+}
