@@ -142,7 +142,7 @@ body.blackBackground.all {
     margin: 0.5em 0;
 }
 .slide h2 {
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: normal;
     margin: 0.5em 0;
 }
@@ -225,6 +225,10 @@ body.blackBackground.all {
     text-align: left;
     padding-left: 20px;
 }
+.slide.image p {
+    margin: 0;
+    padding: 0;
+}
 .slide.code p {
     margin: 0;
     padding: 0;
@@ -252,6 +256,7 @@ body.blackBackground.all {
 .slide.subsection .content {
     color: #fff;
     background-color: rgba(0, 40, 50, 0.8);
+    margin: 50px;
     padding: 6px 10px 3px 10px;
     border-radius: 10px;
 }
