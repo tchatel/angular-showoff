@@ -5,10 +5,10 @@
 var module = angular.module('angular-showoff.controllers', []);
 
 
-module.controller('MainCtrl', ['$scope', '$rootScope', '$http', '$location', 'Presentation',
-                             function ($scope, $rootScope, $http, $location, Presentation) {
+module.controller('MainCtrl', ['$scope', '$rootScope', '$http', '$location', 'Presentation', '$window',
+                             function ($scope, $rootScope, $http, $location, Presentation, $window) {
 
-    var configPath = 'data/config.json';
+    var configPath = $window['angular-showoff-config-path'] || 'data/config.json';
 
     $rootScope.slides = [];
     $rootScope.currentIndex = 0; // internal index for first slide is 0 (but #/1 in url, it's more user friendly)
